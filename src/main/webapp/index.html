@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Connect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #3498db; /* Updated to blue color */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2980b9;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-height: 500px; /* Set a fixed height for the section */
+            overflow-y: auto; /* Add scroll if content exceeds the height */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .alumni-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #ecf0f1; /* Updated background color */
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .alumni-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alumni Connect</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+        <a href="aboutus.html">About Us</a>
+    </nav>
+
+    <section>
+        <div class="alumni-card" onclick="showDetails('Kabilan S Y', 'Class of 1970', 'Email: kabilanyuvaraj007@gmail.com')">
+            <img src="kabilan.jpeg" alt=""/>
+            <h3>Kabilan S Y</h3>
+            <p>Class of 1970</p>
+            <p>Email: kabilanyuvaraj007@gmail.com</p>
+        </div>
+
+        <div class="alumni-card" onclick="showDetails('Koneti Sasank', 'Class of 1985', 'sasankkoneti999@gmail.com')">
+            <img src="sas.jpeg" alt="Alumni 3">
+            <h3>Koneti Sasank</h3>
+            <p>Class of 1985</p>
+            <p>Email: sasankkoneti999@gmail.com</p>
+        </div>
+
+       
+        <div class="alumni-card" onclick="showDetails('Sanjay', 'Class of 2000', 'sanjayedupoiyr@gmail.com')">
+            
+            <img src="sanjay.jpeg" alt=""/>
+            <h3>Sanjay</h3>
+            <p>Class of 2000</p>
+            <p>Email : sanjayedupoiyr@gmail.com</p>
+        </div>
+
+        <div class="alumni-card" onclick="showDetails('Saravana', 'Class of 2010', 'saravanass14@gmail.com')">
+         
+            <img src="sudha.jpeg" alt=""/>
+            <h3>Sarvana Sudharsan</h3>
+            <p>Class of 2010</p>
+            <p>Email: saravanass14@gmail.com</p>
+        </div>
+
+        <div class="alumni-card" onclick="showDetails('Cheran S', 'Class of 1960', 'cheranchenguttavan@gmail.com')">
+            <img src="cheran.jpeg" alt=""/>
+            <h3>Cheran S</h3>
+            <p>Class of 1960</p>
+            <p>Email: cheranchenguttavan@gmail.com</p>
+        </div>
+
+        <div class="alumni-card" onclick="showDetails('Mukesh Raja', 'Class of 1990', 'mukeshrajatmr@gmail.com')">
+            <img src="mukesh.jpeg" alt=""/>
+            <h3>Mukesh Raja</h3>
+            <p>Class of 1990</p>
+            <p>Email: mukeshrajatmr@gmail.com</p>
+        </div>
+
+        <div class="alumni-card" onclick="showDetails('Saravanan', 'Class of 2005', 'saravanan007@gmail.com')">
+            <img src="sarav.jpeg" alt=""/>
+            <h3>Saravanan</h3>
+            <p>Class of 2005</p>
+            <p>Email: saravanan007@gmail.com</p>
+        </div>
+	
+	<div class="alumni-card" onclick="showDetails('Shyam', 'Class of 1965', 'ShyamKunar4455@gmail.com')">
+            <img src="shyam.jpeg" alt=""/>
+            <h3>Shyam Kumar</h3>
+            <p>Class of 1960</p>
+            <p>Email: shyamkumar4455@gmail.com</p>
+        </div>
+        
+        <div class="alumni-card" onclick="showDetails('BhuvanRadja', 'Class of 1988', 'bhuvanradja@gmail.com')">
+            <img src="bhuvan.jpeg" alt=""/>
+            <h3>Bhuvanradja T</h3>
+            <p>Class of 1988</p>
+            <p>Email: bhuvanradja@gmail.com</p>
+        </div>                
+        
+       
+        <div id="alumniModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="alumniName"></h2>
+            <p id="alumniDetails"></p>
+        </div>
+    </div>
+       
+
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Alumni Connect</p>
+    </footer>
+
+    <!-- Modal for Alumni Details -->
+   
+
+    <script>
+        function showDetails(name, year, email) {
+            var modal = document.getElementById("alumniModal");
+            var alumniName = document.getElementById("alumniName");
+            var alumniDetails = document.getElementById("alumniDetails");
+
+            alumniName.innerHTML = name;
+            alumniDetails.innerHTML = "Class of " + year + "<br>Email: " + email;
+
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("alumniModal");
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById("alumniModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

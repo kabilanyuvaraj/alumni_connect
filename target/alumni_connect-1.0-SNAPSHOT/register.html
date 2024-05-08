@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Alumni Connect</title>
+    <link rel="stylesheet" href="register.css" type="text/css"/>
+    <style>
+                body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #3498db; 
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2980b9;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-height: 500px; 
+            overflow-y: auto; 
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .alumni-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #ecf0f1; 
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .alumni-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Alumni Connect</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+        <a href="aboutus.html">About Us</a>
+    </nav>
+
+    <div class="container">
+        <h2>Register</h2>
+        <form action="register" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="usertype">User Type:</label>
+            <select id="usertype" name="usertype" required>
+                <option value="student">Student</option>
+                <option value="alumni">Alumni</option>
+            </select>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phonenumber">Phone Number:</label>
+            <input type="tel" id="phonenumber" name="phonenumber" required>
+            
+           
+            
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Alumni Connect</p>
+    </footer>
+</body>
+</html>
